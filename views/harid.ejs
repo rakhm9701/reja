@@ -4,14 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>REJA</title>
-    <link rel="stylesheet" href="harid.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
   </head>
-  <body>
+  <body style="background-color: #b8bbd1">
     <div class="container">
-      <h1>REJA VA MAQSADLAR</h1>
-      <div class="container2">
-        <form action="/create-item" method="POST">
-          <div class="container3">
+      <h1 class="display-4 text-center py-1">REJA VA MAQSADLAR</h1>
+
+      <div class="jumbotron p-3 shadow-sm">
+        <form id="create-form" action="/create-item" , method="POST">
+          <div class="d-flex align-items-center">
             <input
               id="create-field"
               name="item"
@@ -20,9 +26,11 @@
               class="form-control mr-3"
               type="text"
               style="flex: 1"
-              aria-label="Yangi Harid Qo'shish"
+              placeholder="Enter item name"
             />
-            <button class="one">Yangi Harid Qilish</button>
+            <button class="btn btn-primary" style="border-radius: 20px">
+              <i class="fas fa-plus"> Harid Qurish
+            </button>
           </div>
         </form>
       </div>
