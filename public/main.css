@@ -16,7 +16,7 @@
   flex-direction: row;
   align-items: center;
   margin-top: 2px;
-  color: #767676;
+  background: rgb(229, 229, 229);
 }
 
 /* Left frame */
@@ -27,6 +27,7 @@
   background-color: white;
   display: flex;
   flex-direction: column;
+  border: 1px dotted #767676;
 }
 
 .main_frame .left_frame .left_1 {
@@ -412,15 +413,16 @@
 .main_frame .midd_frame {
   position: relative;
   width: 970px;
-  height: auto;
+  height: 454.33px;
   margin-left: 27px;
-  margin-left: 22px;
+  margin-top: 56px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 
-  background-color: white;
+  background: rgb(240, 240, 246);
 }
 
 .main_frame .midd_frame .midd_top {
@@ -430,9 +432,14 @@
 
   display: flex;
   flex-direction: row;
-  background: rgb(255, 255, 255);
+  background: #ffffff;
 }
 
+.main_frame .midd_frame .round {
+  position: absolute;
+  width: 16.02px;
+  height: 15.57px;
+}
 .main_frame .midd_top .top_left {
   margin-left: 61px;
   position: relative;
@@ -500,19 +507,19 @@
 }
 
 .main_frame .midd_top .top_right {
+  margin-right: 56px;
   position: relative;
   width: 326.06px;
   height: 446.63px;
 
-  border: 1px solid black;
+  border: 1px dotted #767676;
 }
 
 .main_frame .midd_frame .midd_bott {
-  margin-top: 50px;
+  margin-top: -2px;
   position: relative;
   width: 970px;
-  height: 653px;
-
+  height: auto;
   background: #f0f0f6;
 }
 
@@ -555,22 +562,25 @@
 .main_frame .midd_bott .container {
   margin-top: 50px;
   position: relative;
-  width: 1000px;
+  width: 970px;
   height: 630px;
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
+  /* background: #767676; */
 }
 
 .main_frame .midd_bott .category_box {
-  margin-left: 20px;
+  margin-left: -15px;
   position: relative;
-  width: 310px;
+  width: 290px;
   height: 225px;
 
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 
   background: #ffffff;
 }
@@ -598,9 +608,9 @@
 }
 
 .main_frame .category_box p {
-  margin-left: 76px;
+  margin-left: 35px;
   position: relative;
-  width: 134px;
+  width: 246px;
   height: 24px;
 
   font-family: sans-serif;
@@ -657,20 +667,25 @@
   flex-direction: column;
   align-items: center;
 
+  border: 1px dotted #767676;
   background-color: white;
 }
 
-.main_frame .right_frame img {
+.main_frame .right_frame .top_box {
   margin-top: 50px;
   position: relative;
-  width: 65px;
-  height: 78px;
+  width: 30px;
+  height: 30px;
 }
 
-.main_frame .right_frame div {
-  margin-top: 158px;
+.main_frame .right_frame .bottom_box {
+  margin-top: 254px;
 
+  position: relative;
+  width: 65px;
+  height: 493px;
   display: flex;
+
   flex-direction: column;
   justify-content: space-between;
 }
