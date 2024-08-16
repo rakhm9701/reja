@@ -8,6 +8,7 @@ const list = [
   "endi dam oling, foydasi yoq endi", //60
 ];
 
+// => CALL BACK FUNCTIONS
 function maslahatBering(a, callback) {
   if (typeof a !== "number") callback("insert a number", "null");
   else if (a <= 20) callback(null, list[0]);
@@ -30,7 +31,7 @@ maslahatBering(70, (err, data) => {
   }
 });
 console.log("passed here 1");
-
+//  => ASYNC FUNCTION
 // async function maslahatBering(a) {
 //   if (typeof a !== "number") throw new Error("insert a number");
 //   else if (a <= 20) return list[0];
@@ -47,7 +48,7 @@ console.log("passed here 1");
 //   }
 // }
 
-// // then/catch
+// => call via then/catch
 // console.log("passed here 0");
 // maslahatBering(15)
 //   .then((data) => {
@@ -58,7 +59,7 @@ console.log("passed here 1");
 //   });
 // console.log("passed here 1");
 
-// async/await
+// => call via async/await
 // async function run() {
 //   let javob = await maslahatBering(65);
 //   console.log(javob);
