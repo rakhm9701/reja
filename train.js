@@ -1,4 +1,4 @@
-// A-TASK
+/* A-TASK
 
 function countlatter(e, word) {
   let count = 0;
@@ -12,9 +12,9 @@ function countlatter(e, word) {
   return count;
 }
 
-console.log(countlatter("e", "engineer"));
+console.log(countlatter("e", "engineer")); */
 
-/* console.log("Jack Ma maslahatlari");
+console.log("Jack Ma maslahatlari");
 const list = [
   "yaxshi talaba boling", //0-20
   "togri boshliq tanlang va koproq hato qiling", //20-30
@@ -22,7 +22,7 @@ const list = [
   "siz kuchli bolgan narsalarni qiling", //40-50
   "yoshlarga investitsiya qiling", //50-60
   "endi dam oling, foydasi yoq endi", //60
-]; */
+];
 
 // => CALL BACK FUNCTIONS
 
@@ -38,7 +38,8 @@ const list = [
       callback(null, list[5]);
     }, 1000);
   }
-}*?
+}
+  */
 
 // console.log("passed here 0");
 // maslahatBering(70, (err, data) => {
@@ -49,25 +50,26 @@ const list = [
 // });
 // console.log("passed here 1");
 //  => ASYNC FUNCTION
-// async function maslahatBering(a) {
-//   if (typeof a !== "number") throw new Error("insert a number");
-//   else if (a <= 20) return list[0];
-//   else if (a > 20 && a <= 30) return list[1];
-//   else if (a > 30 && a <= 40) return list[2];
-//   else if (a > 40 && a <= 50) return list[3];
-//   else if (a > 50 && a <= 60) return list[4];
-//   else {
-//     return new Promise((resolve, reject) => {
-//       setInterval(() => {
-//         resolve(list[5]);
-//       }, 1000);
-//     });
-//   }
-// }
+
+async function maslahatBering(a) {
+  if (typeof a !== "number") throw new Error("insert a number");
+  else if (a <= 20) return list[0];
+  else if (a > 20 && a <= 30) return list[1];
+  else if (a > 30 && a <= 40) return list[2];
+  else if (a > 40 && a <= 50) return list[3];
+  else if (a > 50 && a <= 60) return list[4];
+  else {
+    return new Promise((resolve, reject) => {
+      setInterval(() => {
+        resolve(list[5]);
+      }, 1000);
+    });
+  }
+}
 
 // => call via then/catch
 
-/* console.log("passed here 0");
+console.log("passed here 0");
 maslahatBering(15)
   .then((data) => {
     console.log("javob:", data);
@@ -75,11 +77,11 @@ maslahatBering(15)
   .catch((err) => {
     console.log("ERROR:", err);
   });
-console.log("passed here 1"); */
+console.log("passed here 1");
 
 // => call via async/await
 
-/* async function run() {
+async function run() {
   let javob = await maslahatBering(65);
   console.log(javob);
   javob = await maslahatBering(65);
@@ -94,4 +96,4 @@ console.log("passed here 1"); */
   console.log(javob);
 }
 
-run(); */
+run();
