@@ -42,7 +42,17 @@ app.set("view engine", "ejs");
 // });
 
 app.post("/create-item", (req, res) => {
+  console.log("user entered / create-item");
   console.log(req.body);
+  const new_reja = req.body.reja;
+  db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.end("someting went wrong");
+    } else {
+      res.end("successefully added");
+    }
+  });
   res.json({ test: "success" });
 });
 
@@ -51,7 +61,18 @@ app.get("/author", (req, res) => {
 });
 
 app.get("/", function (req, res) {
-  res.render("reja");
+  console.log("user entered /");
+  db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+      if (err) {
+        console.log(err);
+        res.end("someting went wrong");
+      } else {
+        console.log(data);
+        res.render("reja", { items: data });
+      }
+    });
 });
 
 module.exports = app;
