@@ -1,3 +1,16 @@
+// B - TASK;
+function countDigits(str) {
+  let count = 0;
+  for (let a = 0; a < str.length; a++) {
+    if (!isNaN(str[a])) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(countDigits("ad2a54y79wet0sfgb9"));
+
 /* A-TASK
 
 function countlatter(e, word) {
@@ -14,7 +27,7 @@ function countlatter(e, word) {
 
 console.log(countlatter("e", "engineer")); */
 
-console.log("Jack Ma maslahatlari");
+/* console.log("Jack Ma maslahatlari");
 const list = [
   "yaxshi talaba boling", //0-20
   "togri boshliq tanlang va koproq hato qiling", //20-30
@@ -22,7 +35,7 @@ const list = [
   "siz kuchli bolgan narsalarni qiling", //40-50
   "yoshlarga investitsiya qiling", //50-60
   "endi dam oling, foydasi yoq endi", //60
-];
+]; */
 
 // => CALL BACK FUNCTIONS
 
@@ -51,7 +64,7 @@ const list = [
 // console.log("passed here 1");
 //  => ASYNC FUNCTION
 
-async function maslahatBering(a) {
+/* async function maslahatBering(a) {
   if (typeof a !== "number") throw new Error("insert a number");
   else if (a <= 20) return list[0];
   else if (a > 20 && a <= 30) return list[1];
@@ -65,11 +78,11 @@ async function maslahatBering(a) {
       }, 1000);
     });
   }
-}
+} */
 
 // => call via then/catch
 
-console.log("passed here 0");
+/* console.log("passed here 0");
 maslahatBering(15)
   .then((data) => {
     console.log("javob:", data);
@@ -77,11 +90,11 @@ maslahatBering(15)
   .catch((err) => {
     console.log("ERROR:", err);
   });
-console.log("passed here 1");
+console.log("passed here 1"); */
 
 // => call via async/await
 
-async function run() {
+/* async function run() {
   let javob = await maslahatBering(65);
   console.log(javob);
   javob = await maslahatBering(65);
@@ -96,4 +109,4 @@ async function run() {
   console.log(javob);
 }
 
-run();
+run(); */
