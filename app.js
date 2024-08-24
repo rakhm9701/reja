@@ -1,6 +1,5 @@
 console.log("Web Serverni boshlash");
 const express = require("express");
-// const res = require("express/lib/respone");
 const app = express();
 const fs = require("fs");
 
@@ -13,8 +12,9 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
   }
 });
 
-//  Mongo DB chaqirish
+// Mongo DB chaqirish
 const db = require("./server").db();
+const mongodb = require("mongodb");
 
 // 1: Kirish code
 app.use(express.static("public"));
@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set("views", "views");
 app.set("view engine", "ejs");
 
-// 4: Routine code
+// 4: Routing code
 
 // app.get("/hello", function (req, res) {
 //   res.send("<h1>HELLO WORLD by David</h1>");
@@ -42,18 +42,48 @@ app.set("view engine", "ejs");
 // });
 
 app.post("/create-item", (req, res) => {
-  console.log("user entered / create-item");
-  console.log(req.body);
+  console.log("user entered /create-item");
   const new_reja = req.body.reja;
   db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
     if (err) {
       console.log(err);
-      res.end("someting went wrong");
+      res.status(500).send("Error creating item");
     } else {
-      res.end("successefully added");
+      console.log(data.ops);
+      res.json(data.ops[0]);
     }
   });
-  res.json({ test: "success" });
+});
+
+app.post("/delete-item", (req, res) => {
+  const id = req.body.id;
+  db.collection("plans").deleteOne(
+    { _id: new mongodb.ObjectId(id) },
+    function (err, data) {
+      res.json({ state: "success" });
+    }
+  );
+});
+
+app.post("/edit-item", (req, res) => {
+  const data = req.body;
+  console.log(data);
+
+  db.collection("plans").findOneAndUpdate(
+    { _id: new mongodb.ObjectId(data.id) },
+    { $set: { reja: data.new_input } },
+    function (err, result) {
+      res.json({ state: "success" });
+    }
+  );
+});
+
+app.post("/delete-all", (req, res) => {
+  if (req.body.delete_all) {
+    db.collection("plans").deleteMany(function () {
+      res.json({ state: "hamma rejalarni o'chirildi!" });
+    });
+  }
 });
 
 app.get("/author", (req, res) => {
@@ -67,9 +97,8 @@ app.get("/", function (req, res) {
     .toArray((err, data) => {
       if (err) {
         console.log(err);
-        res.end("someting went wrong");
+        res.end("Something went wrong");
       } else {
-        console.log(data);
         res.render("reja", { items: data });
       }
     });
