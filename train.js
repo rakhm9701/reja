@@ -1,4 +1,17 @@
-//TASK C
+// TASK D
+
+function checkContent(a, b) {
+  let array1 = a.split("").sort().join("");
+  let array2 = b.split("").sort().join("");
+  if (array1 === array2) {
+    return true;
+  }
+  return false;
+}
+
+console.log(checkContent("mitgroup", "mitgroup"));
+
+/* TASK C
 
 const moment = require("moment");
 const time = moment().format("HH:mm");
@@ -74,4 +87,4 @@ console.log(shop.qabul("cola", 4));
 console.log(shop.qabul("non", 4));
 console.log(shop.sotish("non", 3));
 console.log(shop.sotish("cola", 2));
-console.log(shop.qoldiq());
+console.log(shop.qoldiq()); */

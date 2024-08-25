@@ -1,5 +1,3 @@
-// const { response } = require("../app");
-
 console.log("FrontEND JS ishga tushdi");
 
 function itemTemplate(item) {
