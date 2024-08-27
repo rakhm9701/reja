@@ -59,6 +59,7 @@ document.addEventListener("click", function (e) {
   }
 
   //edit oper
+
   if (e.target.classList.contains("edit-me")) {
     let userInput = prompt(
       "O'zgarish kiriting",

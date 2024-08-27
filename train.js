@@ -1,4 +1,7 @@
-// TASK D
+//TASK E:
+
+/* 
+TASK D
 
 function checkContent(a, b) {
   let array1 = a.split("").sort().join("");
@@ -10,6 +13,7 @@ function checkContent(a, b) {
 }
 
 console.log(checkContent("mitgroup", "mitgroup"));
+*/
 
 /* TASK C
 
