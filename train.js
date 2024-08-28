@@ -1,5 +1,12 @@
 //TASK E:
 
+function getReverse(string) {
+  let word = string.split("").reverse().join("");
+  return word;
+}
+
+console.log(getReverse("hello"));
+
 /* 
 TASK D
 
