@@ -1,4 +1,16 @@
-//TASK E:
+// TASK F:
+function findDoublers(text) {
+  const array = text.split("");
+  const result = array.some((double, index) => {
+    console.log(`${array.indexOf(double)} !== ${index}`);
+    return array.indexOf(double) !== index;
+  });
+  return result;
+}
+
+console.log(findDoublers("cool"));
+
+/* TASK E:
 
 function getReverse(string) {
   let word = string.split("").reverse().join("");
@@ -6,6 +18,7 @@ function getReverse(string) {
 }
 
 console.log(getReverse("hello"));
+*/
 
 /* TASK D
 
@@ -139,7 +152,7 @@ const list = [
   "endi dam oling, foydasi yoq endi", //60
 ]; */
 
-// => CALL BACK FUNCTIONS
+//   => CALL BACK FUNCTIONS
 
 /* function maslahatBering(a, callback) {
   if (typeof a !== "number") callback("insert a number", "null");
@@ -154,16 +167,17 @@ const list = [
     }, 1000);
   }
 }
+
+console.log("passed here 0");
+maslahatBering(70, (err, data) => {
+  if (err) console.log("ERROR:", err);
+  else {
+    console.log("javob:", data);
+  }
+});
+console.log("passed here 1");
   */
 
-// console.log("passed here 0");
-// maslahatBering(70, (err, data) => {
-//   if (err) console.log("ERROR:", err);
-//   else {
-//     console.log("javob:", data);
-//   }
-// });
-// console.log("passed here 1");
 //  => ASYNC FUNCTION
 
 /* async function maslahatBering(a) {
@@ -182,7 +196,7 @@ const list = [
   }
 } */
 
-// => call via then/catch
+//  => call via then/catch
 
 /* console.log("passed here 0");
 maslahatBering(15)
@@ -194,7 +208,7 @@ maslahatBering(15)
   });
 console.log("passed here 1"); */
 
-// => call via async/await
+//  => call via async/await
 
 /* async function run() {
   let javob = await maslahatBering(65);
