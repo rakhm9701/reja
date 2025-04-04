@@ -1,4 +1,4 @@
-console.log("Web Serverni boshlash");
+console.log("Web Serverni start");
 const express = require("express");
 const app = express();
 const fs = require("fs");

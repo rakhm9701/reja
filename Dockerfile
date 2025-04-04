@@ -13,8 +13,8 @@ CMD npm install && node server.js
 # docker ps
 
 # Barcha containerlarni to'xtatish va o'chirish #
-# docker stop $(docker ps -a -q)
-# docker rm $(docker ps -a -q)
+# docker container stop id
+# docker container rm (remove) id
 
 # Barcha to'xtagan containerlarni o'chirish:
 # docker container prune 
